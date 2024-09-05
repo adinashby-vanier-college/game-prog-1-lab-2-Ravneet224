@@ -14,5 +14,17 @@ public class Lobster extends Actor
      */
     public void act()
     {
+        move(4);
+        if (Greenfoot.isKeyDown("a")) {
+            turn(-3);
+        }
+        if (Greenfoot.isKeyDown("d")) {
+            turn(3);
+        }
+        turn(3);
+        Crab a = (Crab)getOneIntersectingObject(Crab.class);
+        if (a != null) {
+            getWorld().removeObject(a);
+        }
     }
 }
